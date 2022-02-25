@@ -16,6 +16,30 @@ Follow until "Build the example".
 
 Make sure you have not skipped any steps as this will cause strange file missing errors down the track.
 
+
+```
+export MY_INSTALL_DIR=$HOME/grpcinstall
+mkdir -p $MY_INSTALL_DIR
+export PATH="$MY_INSTALL_DIR/bin:$PATH"
+wget -q -O cmake-linux.sh https://github.com/Kitware/CMake/releases/download/v3.19.6/cmake-3.19.6-Linux-x86_64.sh
+sh cmake-linux.sh -- --skip-license --prefix=$MY_INSTALL_DIR
+rm cmake-linux.sh
+sudo apt install -y build-essential autoconf libtool pkg-config
+cd $HOME
+git clone --recurse-submodules -b v1.43.0 https://github.com/grpc/grpc
+cd grpc
+mkdir -p cmake/build
+cd cmake/build
+cmake -DgRPC_INSTALL=ON \
+      -DgRPC_BUILD_TESTS=OFF \
+      -DCMAKE_INSTALL_PREFIX=$MY_INSTALL_DIR \
+      ../..
+make -j
+make install
+cd ../../      
+```
+
+
 ### Build this Project
 
 ```
