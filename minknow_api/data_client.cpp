@@ -288,7 +288,7 @@ void DataClient::read_live_results() {
       bool strand_like = false;
       for (u_int32_t classification : read_data.chunk_classifications()) {
         // Invalid classifcation
-        if (read_classification_map.find(classification) != read_classification_map.end()) {
+        if (read_classification_map.find(classification) == read_classification_map.end()) {
           continue;
         }
         // If proper classification, set strand_like to true
