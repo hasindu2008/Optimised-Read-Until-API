@@ -43,9 +43,9 @@ cd ../../
 ### Build this Project
 
 ```
-# Clone this project however you wish
+# Clone this project as you wish
 
-git clone git@github.com:brianzhang2101/Optimised-Read-Until-API.git
+git clone git@github.com:hasindu2008/Optimised-Read-Until-API.git
 
 # Move the minknow_api folder into the examples/cpp folder in your locally installed GRPC files
 
