@@ -1,11 +1,12 @@
 #!/bin/bash
 
 set -x
+set -e
 
-export PATH=/home/hasindu/grpcshit/bin:$PATH
+export PATH=$HOME/grpcinstall/bin:$PATH
 DIR=$(pwd)
-rm -r $HOME/grpc/examples/cpp/minknow_api
-rm -r $HOME/grpc/examples/protos
+rm -rf $HOME/grpc/examples/cpp/minknow_api
+rm -rf $HOME/grpc/examples/protos
 cp -r $HOME/Optimised-Read-Until-API/minknow_api $HOME/grpc/examples/cpp/
 cp -r $HOME/Optimised-Read-Until-API/proto $HOME/grpc/examples/
 cd $HOME/grpc/examples/cpp/minknow_api/cmake/build
